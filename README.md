@@ -10,11 +10,11 @@ It is a Instagram Story scraping tool.
 
 ## Use
 
-To see hidded mentions on the instagram stories
+To see hidden mentions on the instagram stories
 
 To save instagram stories
 
-To save heighlights of instagram user
+To save Highlights of instagram user
 
 
 
@@ -33,7 +33,7 @@ After successful Installation
 ```bash
   mitmdump -s main.py   # This command gives you a lot of logs
 ```
-For quit run
+For quite run
 ```bash
    mitmdump -s main.py -q
 ```
@@ -45,7 +45,7 @@ Now all Done
 
 ## Optimizations
 
-After all instalation oper the firfox browser and setup the browser proxy on IP ==> 127.0.0.1 and PORT ==> 8080
+After all instalation open the firfox browser and setup the browser proxy on IP ==> 127.0.0.1 and PORT ==> 8080
 
 After setup proxy on firfox
 
