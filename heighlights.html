@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Stories | Mentions</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <span>
+            <h2>Profile Heighlights</h2>
+        </span>
+        <a href="/index.html"><h3>Stories</h3></a>
+    </nav>
+    <div class="container" id="container">
+
+    </div>
+    <script>
+        async function getData() {
+            const response = await fetch('./json/heighlight.json');
+            const data = await response.json();
+            let i = 1
+            for (const [key, value] of Object.entries(data)) {
+                const newdiv = document.createElement("div")
+                newdiv.className = "user"
+                newdiv.id = "user-" + i.toString()
+                document.getElementById("container").appendChild(newdiv);
+
+                const user = document.createElement("h3");
+                user.innerHTML = key;
+                user.className = "username";
+                user.id = "username-" + i.toString()
+                document.getElementById("user-" + i.toString()).appendChild(user);
+
+                const propic = document.createElement("a");
+                propic.innerHTML = "See Profile Pic";
+                propic.href = value['Profile Pic']
+                document.getElementById("user-" + i.toString()).appendChild(propic);
+
+                const hr = document.createElement("hr");
+                document.getElementById("user-" + i.toString()).appendChild(hr);
+
+                let j = 1
+                for (const [skey, svalue] of Object.entries(value["stories"])) {
+                    const storydiv = document.createElement("div");
+                    storydiv.innerHTML = "<h4>" + skey + "</h4>"
+                    storydiv.className = "storydiv";
+                    storydiv.id = "storydiv-" + i.toString() + j.toString()
+                    document.getElementById("user-" + i.toString()).appendChild(storydiv);
+
+                    const mentions = document.createElement("p");
+                    mentions.innerHTML = "Mentions : " + svalue["Mentions"]
+                    mentions.className = "mentions"
+                    document.getElementById("storydiv-" + i.toString() + j.toString()).appendChild(mentions);
+
+                    const storydivbtn = document.createElement("div");
+                    storydivbtn.className = "storydivbtn";
+                    storydivbtn.id = "storydivbtn-" + i.toString() + j.toString()
+                    document.getElementById("storydiv-" + i.toString() + j.toString()).appendChild(storydivbtn);
+
+                    const storypic = document.createElement("a");
+                    storypic.innerHTML = "Photo"
+                    storypic.href = svalue["Img"]
+                    document.getElementById("storydivbtn-" + i.toString() + j.toString()).appendChild(storypic);
+
+                    const storyvid = document.createElement("a");
+                    storyvid.innerHTML = "Video"
+                    storyvid.href = svalue["Video"]
+                    document.getElementById("storydivbtn-" + i.toString() + j.toString()).appendChild(storyvid);
+                    console.log
+                    j += 1
+                }
+                i += 1
+            }
+        };
+        getData();
+    </script>
+</body>
+
+</html>
