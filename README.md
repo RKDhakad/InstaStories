@@ -62,3 +62,5 @@ when you see any story on the browser this story will save on you system and can
 ## On Termux
 On the termux all server all run with the main.py script so there is no need to run again
 just go on the http://127.0.0.1:8000
+On the android use Lightning Browser instead of firfox 
+Lightning Browser : https://play.google.com/store/apps/details?id=acr.browser.barebones&hl=en_IN&gl=US&pli=1
