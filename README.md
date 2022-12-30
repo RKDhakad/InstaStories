@@ -20,8 +20,6 @@ To save heighlights of instagram user
 
 ## Installation
 
-Install my-project with npm
-
 ```bash
   git clone https://github.com/RKDhakad/InstaStories.git
 ```
